@@ -10,7 +10,8 @@ const App = () => {
 
   const addTask=(task)=>{
     if (task.trim()){
-      setTasks(...tasks, task);
+      setTasks([...tasks, task]);
+
     }
 
   }
