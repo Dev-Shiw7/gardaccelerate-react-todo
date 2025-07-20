@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
+const TodoInput = ({ addTask }) => {
+  const [input, setInput] = useState("");
 
-const TodoInput=({addTask})=>{
-    const [input, setInput]=useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addTask(input);
+    setInput("");
+  };
 
-
-    const handleSubmit=(e)=>{
-        e.preventDefault();
-        addTask(input);
-        setInput('');
-    }
-
-     return (
+  return (
     <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
       <input
         type="text"
@@ -27,4 +25,4 @@ const TodoInput=({addTask})=>{
   );
 };
 
-export default TodoInput; 
+export default TodoInput;
